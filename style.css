@@ -5,6 +5,7 @@
   --branco: #fff;
   --cinza: #f5f5f5;
   --erro: #d32f2f;
+  --roxo-hover: #8e44ad;
 }
 body {
   background: linear-gradient(135deg, var(--roxo-primario), var(--roxo-secundario));
@@ -20,7 +21,7 @@ body {
   border-radius: 24px;
   box-shadow: 0 4px 24px rgba(108,59,191,0.12);
   padding: 2.5rem 2rem;
-  max-width: 400px;
+  max-width: 430px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -74,10 +75,11 @@ button {
   font-size: 1.1rem;
   font-weight: 600;
   cursor: pointer;
-  transition: background 0.2s;
+  transition: background 0.2s, transform 0.2s;
 }
-button:hover {
-  background: var(--roxo-secundario);
+button:hover, .tab-btn.active {
+  background: var(--roxo-hover);
+  transform: scale(1.04);
 }
 .card {
   background: var(--roxo-claro);
@@ -100,9 +102,61 @@ button:hover {
   font-size: 1rem;
   text-align: center;
 }
+.tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  width: 100%;
+  justify-content: center;
+}
+.tab-btn {
+  background: var(--roxo-claro);
+  color: var(--roxo-primario);
+  border: none;
+  border-radius: 12px 12px 0 0;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.tab-btn.active {
+  background: var(--roxo-primario);
+  color: var(--branco);
+}
+.tab-content {
+  width: 100%;
+}
+#listaMensalidades {
+  margin: 1rem 0;
+}
+.lista-item {
+  background: var(--cinza);
+  color: var(--roxo-primario);
+  border-radius: 10px;
+  padding: 0.5rem 1rem;
+  margin-bottom: 0.3rem;
+  font-size: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.lista-item button {
+  background: var(--erro);
+  color: var(--branco);
+  border-radius: 8px;
+  padding: 0.2rem 0.7rem;
+  font-size: 0.9rem;
+  margin-left: 1rem;
+  transition: background 0.2s;
+}
+.lista-item button:hover {
+  background: #b71c1c;
+}
 @media (max-width: 500px) {
   .container {
     padding: 1.2rem 0.5rem;
+    max-width: 98vw;
   }
   h1 {
     font-size: 1.2rem;
