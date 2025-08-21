@@ -91,8 +91,7 @@ document.getElementById('limparBtn').addEventListener('click', function() {
 });
 
 // Preencher exemplo de teste como placeholder
-window.addEventListener('DOMContentLoaded'), () => {
+window.addEventListener('DOMContentLoaded', () => {
   document.getElementById('mensalidadeCheia').value = 'R$ 1.000,00';
   document.getElementById('mensalidadeAtual').value = 'R$ 800,00';
-    mascaraMoeda(document.getElementById('mensalidadeCheia')); 
-}
+});
