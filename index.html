@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Facilitador de Negociação</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Simulador de Negociação de Mensalidade</h1>
+    <form id="simuladorForm" autocomplete="off">
+      <div>
+        <label for="mensalidadeCheia">Mensalidade cheia (sem desconto)</label>
+        <input type="text" id="mensalidadeCheia" placeholder="R$ 1.000,00" maxlength="15" required>
+      </div>
+      <div>
+        <label for="mensalidadeAtual">Mensalidade atual (paga pelo aluno)</label>
+        <input type="text" id="mensalidadeAtual" placeholder="R$ 800,00" maxlength="15" required>
+      </div>
+      <div class="buttons">
+        <button type="button" id="calcularBtn">Calcular</button>
+        <button type="button" id="limparBtn">Limpar</button>
+      </div>
+    </form>
+    <div id="errorMsg" class="error" style="display:none;"></div>
+    <div id="resultados" style="width:100%;"></div>
+  </div>
+  <script src="js/script.js"></script>
+</body>
+</html>
