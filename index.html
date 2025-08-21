@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Facilitador de Negociação</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Simulador de Negociação de Mensalidade</h1>
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="negociacao">Negociação única</button>
+      <button class="tab-btn" data-tab="multiplas">Múltiplas mensalidades</button>
+    </div>
+    <div class="tab-content" id="negociacao" style="display:block;">
+      <form id="simuladorForm" autocomplete="off">
+        <div>
+          <label for="valorCurso">Valor do curso (sem desconto)</label>
+          <input type="text" id="valorCurso" placeholder="R$ 1.000,00" maxlength="15" required>
+        </div>
+        <div>
+          <label for="mensalidadeAtual">Mensalidade atual (paga normalmente)</label>
+          <input type="text" id="mensalidadeAtual" placeholder="R$ 800,00" maxlength="15" required>
+        </div>
+        <div>
+          <label for="mensalidadeVencida">Mensalidade vencida (com juros)</label>
+          <input type="text" id="mensalidadeVencida" placeholder="R$ 850,00" maxlength="15" required>
+        </div>
+        <div class="buttons">
+          <button type="button" id="calcularBtn">Calcular negociação</button>
+          <button type="button" id="limparBtn">Limpar</button>
+        </div>
+      </form>
+      <div id="errorMsg" class="error" style="display:none;"></div>
+      <div id="resultados" style="width:100%;"></div>
+    </div>
+    <div class="tab-content" id="multiplas" style="display:none;">
+      <form id="multiplasForm" autocomplete="off">
+        <div>
+          <label for="valorCursoMulti">Valor do curso (sem desconto)</label>
+          <input type="text" id="valorCursoMulti" placeholder="R$ 1.000,00" maxlength="15" required>
+        </div>
+        <div>
+          <label for="mensalidadeAtualMulti">Mensalidade atual (paga normalmente)</label>
+          <input type="text" id="mensalidadeAtualMulti" placeholder="R$ 800,00" maxlength="15" required>
+        </div>
+        <div>
+          <label for="mensalidadeVencidaMulti">Mensalidade vencida (com juros)</label>
+          <input type="text" id="mensalidadeVencidaMulti" placeholder="R$ 850,00" maxlength="15">
+          <button type="button" id="adicionarMensalidadeBtn">Adicionar mensalidade</button>
+        </div>
+        <div class="buttons">
+          <button type="button" id="somarBtn">Somar todas</button>
+          <button type="button" id="limparMultiBtn">Limpar</button>
+        </div>
+      </form>
+      <div id="errorMsgMulti" class="error" style="display:none;"></div>
+      <div id="listaMensalidades" style="width:100%;"></div>
+      <div id="resultadosMulti" style="width:100%;"></div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
