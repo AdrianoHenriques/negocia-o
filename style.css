@@ -8,13 +8,35 @@
   --roxo-hover: #8e44ad;
 }
 body {
-  background: linear-gradient(135deg, var(--roxo-primario), var(--roxo-secundario));
+  /* Gradiente circular animado com tons de roxo e lilás */
   min-height: 100vh;
   margin: 0;
   font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
   display: flex;
   align-items: center;
   justify-content: center;
+  background: radial-gradient(circle at 50% 50%, #6c3bbf 0%, #a084e8 30%, #cf69fa 55%, #8e44ad 75%, #3d1c5a 100%);
+  background-size: 200% 200%;
+  animation: roxoCircular 16s linear infinite;
+}
+
+/* Animação circular suave entre tons de roxo/lilás */
+@keyframes roxoCircular {
+  0% {
+    background-position: 50% 50%;
+  }
+  25% {
+    background-position: 100% 50%;
+  }
+  50% {
+    background-position: 50% 100%;
+  }
+  75% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 50% 50%;
+  }
 }
 .container {
   background: var(--branco);
